@@ -1,5 +1,5 @@
 @import "header.css";
-
+@import "news.css";
 
 *{
     margin: 0;
@@ -10,6 +10,3 @@
     list-style: none;
 }
 
-body{
-    height: 200vh;
-}
