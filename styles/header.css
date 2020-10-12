@@ -25,9 +25,7 @@ header{
    
 }
 
-#searchbar #search-btn #logo{
-    margin: auto;
-}
+
 
 #searchbar{
     display: flex;
@@ -36,11 +34,7 @@ header{
     height: 20px;
 }
 
-#search-btn{
-    width: 20px;
-    height: 21px;
 
-}
 
 .nav-container{
     background-color: #58bce0;
