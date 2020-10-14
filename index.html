@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GGAMEZ</title>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <script src="./scripts/main.js" type="module"></script>
@@ -12,20 +11,26 @@
     
 </head>
 <body>
+
+    
     <header>
         <div class="container">
-           <a href="#">
-               <img id="logo" src="./img/icons/logo.png.png" alt="Ggamez logo">
-           </a> 
-           
+            <div id="logo-wrapper">
+                <a href="./index.html">
+                    <img id="logo" src="./img/icons/logo.png.png" alt="Ggamez logo">
+                </a> 
+            </div>  
+
             <input class="searchbar" type="text" placeholder="Search">
-           
-            <a href="#">
-                <img id="shopping-cart-icon" src="./img/icons/shopping-cart.png" alt="shopping cart. icon.">
-            </a>
+            
+            <div id="shopping-icon-container">
+                <a href="/markup/shopping-cart.html">
+                    <img id="shopping-cart-icon" src="./img/icons/shopping-cart.png" alt="shopping cart. icon.">
+                </a>
+            </div>
 
         </div>
-        <section class="nav-container">
+        <article class="nav-container">
             <ul class="console-list">
                 <li class="console-link"><a href="">PC</a></li>
                 <li class="console-link"><a href="">PLAYSTATION</a></li>
@@ -34,8 +39,9 @@
                 <li id="deals" class="console-link"><a href="">DEALS</a></li>
                 <li class="console-link"><a href="">COMING SOON</a></li>
             </ul>
-        </section>
+        </article>
     </header>
+   
 
     
     <main class="main-container">
@@ -46,6 +52,46 @@
 
 
     </main>
+
+    <footer>
+
+        <div id="footer-wrapper">
+
+            <div id="contact-container">
+                <h4 class="toptext-footer">CONTACT US</h4>
+                <p>info@ggamez.com</p>
+                <p>+47 94172676</p>
+            </div>
+
+            <div id="our-products-container">
+                <h5 class="toptext-footer">OUR PRODUCTS</h5>
+
+                <li>
+                    <a href="./markup/pc.html">PC</a>
+                </li>
+
+                <li>
+                    <a href="./markup/playstation.html">PLAYSTATION</a>
+                </li>
+
+                <li>
+                    <a href="./markup/xbox.html">XBOX</a>
+                </li>
+
+                <li><a href="./markup/nintendo.html">NINTENDO</a>
+                </li>
+
+                <li>
+                    <a href="./markup/deals.html">DEALS</a>
+                </li>
+
+                <li>
+                    <a href="./markup/coming-soon.html">COMING SOON</a>
+                </li>
+            </div>
+        </div>
+
+    </footer>
     
 </body>
 </html>

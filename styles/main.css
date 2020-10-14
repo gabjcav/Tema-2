@@ -1,5 +1,8 @@
 @import "header.css";
-@import "news.css";
+@import "footer.css";
+
+
+
 
 *{
     margin: 0;
@@ -10,3 +13,11 @@
     list-style: none;
 }
 
+body{
+    z-index: -1;
+    width: 100vw;
+}
+
+main{
+    height: 80vh;
+}
