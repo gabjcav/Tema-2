@@ -1,6 +1,6 @@
 @import "header.css";
 @import "footer.css";
-@import "hot.css";
+@import "products.css";
 
 
 
@@ -17,6 +17,7 @@
 body{
     z-index: -1;
     width: 100vw;
+    background-color: whitesmoke;
 }
 
 main{
