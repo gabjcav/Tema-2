@@ -1,6 +1,6 @@
 @import "header.css";
 @import "footer.css";
-
+@import "hot.css";
 
 
 
@@ -9,8 +9,9 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Staatliches', sans-serif;
     list-style: none;
+    
 }
 
 body{
@@ -19,5 +20,9 @@ body{
 }
 
 main{
-    height: 80vh;
+    min-height: 100vh;
+    width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+ 
 }

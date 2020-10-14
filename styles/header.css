@@ -2,40 +2,44 @@ header{
    
     height: 120px;
     width: 100vw;
-    
+    margin-bottom: 200px;
+    z-index: 5;
 }
 
 
 .container{
-    background-color: rgb(255, 255, 255);
-    height: 50%;
+    background-color: rgb(255, 255, 255,55);
+    height: 70%;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     justify-content: center;
     align-items: center; 
-    margin-bottom: 10px;
-    margin-top: 10px;
+    
 }
 
 .container input{
     border: 2px solid rgba(0, 0, 0, .5);
     padding: 7px;
     border-radius: 7px;
+    outline-style: none;
+    outline: none;
 }
+
 #logo{
     
     height: 70px;
-   margin-left: 20px;
+    margin-left: 20px;
 }
 
 
 
-#searchbar{
+.searchbar{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
+    height: 40px;
+    outline: none;
     
 }
 
