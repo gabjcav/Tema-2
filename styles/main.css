@@ -1,6 +1,6 @@
 @import "header.css";
 @import "footer.css";
-@import "products.css";
+@import "frontpage-products.css";
 
 
 
@@ -26,4 +26,12 @@ main{
     margin-left: auto;
     margin-right: auto;
  
+}
+
+#welcome{
+    text-align: center;
+    font-size: 7rem;
+    color: #58bce0;
+    text-decoration: underline;
+    margin-bottom: 200px;
 }
