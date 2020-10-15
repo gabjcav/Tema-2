@@ -21,15 +21,13 @@
     padding: 20px;
     border-radius: 10px;
     border: 10px solid #58bce0;
-}
-
-.products-games{
-    object-fit: cover;
     
 }
 
+
+
 .products-games img{
-    height: 400px;
+    height: 420px;
     width: 350px;
     
 }
