@@ -24,7 +24,7 @@
             <input class="searchbar" type="text" placeholder="Search">
             
             <div id="shopping-icon-container">
-                <a href="/markup/shopping-cart.html">
+                <a id="shopping-link" href="">
                     <img id="shopping-cart-icon" src="./img/icons/shopping-cart.png" alt="shopping cart. icon.">
                 </a>
             </div>
@@ -36,9 +36,53 @@
     </header>
 
 
+    <div class="shopping-cart-container">
+            <div id="shopping-cart-content">
+                <button id="close-shopping-cart"> <p>X</p> </button>
+                <h1 id="shopping-cart-text">SHOPPING CART</h1>
+                <div class="shopping-cart-list">
+                    <ul class="cart-list-container">
+                         <li class="cart-list-item" id="cart-info">
+                            <h4 class="cart-product-name">GAME</h4>
+                            <p class="cart-product-price">PRICE</p>
+                            
+                        </li>
+                        <!--
+                        <li class="cart-list-item">
+                            <h4 class="cart-product-name">FIFA 21</h4>
+                            <p class="cart-product-price">59,99</p>
+                            <button class="cart-remove-btn">Remove</button>
+                        </li>
+                        <li class="cart-list-item">
+                            <h4 class="cart-product-name">COD MW</h4>
+                            <p class="cart-product-price">59,99</p>
+                            <button class="cart-remove-btn">Remove</button>
+                        </li>
+                        <li class="cart-list-item">
+                            <h4 class="cart-product-name">FARCRY 5</h4>
+                            <p class="cart-product-price">59,99</p>
+                            <button class="cart-remove-btn">Remove</button>
+                        </li>
+                        <li class="cart-list-item">
+                            <h4 class="cart-product-name">GTA V</h4>
+                            <p class="cart-product-price">59,99</p>
+                            <button class="cart-remove-btn">Remove</button>
+                        </li> -->
+                        <!-- <li class="cart-list-item" id="total-price">
+                            <h4 class="cart-product-name">TOTAL PRICE</h4>
+                            <p class="cart-product-price">59,99</p>
+                        </li>  -->
+                    </ul>
+                    <button id="checkout">CHECK OUT</button>
+                </div>
+            </div>
+    </div>
     
     <main class="main-container">
         <h1 id="welcome">WELCOME TO GGAMEZ STORE</h1>
+
+
+        
 
             <!--POPULAR GAMES-->
         
@@ -55,7 +99,7 @@
             <!--PC-->
 
             <div class="products-wrapper">
-                <h1 class="products-text"> PC</h1>
+                <h1 id="products-text-pc" class="products-text"> PC</h1>
                 <div id="pc-container" class="products-container">
 
                     
@@ -63,10 +107,10 @@
                 </div>
         
             </div>
-            
+
             <!--PS4-->
             <div class="products-wrapper">
-                <h1 class="products-text"> PLAYSTATION</h1>
+                <h1 id="products-text-ps4" class="products-text"> PLAYSTATION</h1>
                 <div id="ps4-container" class="products-container">
 
                
@@ -75,7 +119,7 @@
         
             </div>
             <div class="products-wrapper">
-                <h1 class="products-text"> XBOX</h1>
+                <h1 id="products-text-xbox" class="products-text"> XBOX</h1>
                 <div id="xbox-container" class="products-container">
 
                     
@@ -83,6 +127,7 @@
                 </div>
         
             </div>
+
     </main>
 
     <footer>

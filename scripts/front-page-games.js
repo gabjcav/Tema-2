@@ -1,5 +1,6 @@
 //popular games
 
+
 export let popularGamesGrid = [
   {
     name: "FIFA 21",
@@ -60,10 +61,10 @@ export let pcGamesGrid = [
   },
   {
 
-      name: "BATTLEFIELD V",
-      price: 45.99,
-      url: '/img/cover/pc/bf5.jpg'
-    }
+    name: "BATTLEFIELD V",
+    price: 45.99,
+    url: '/img/cover/pc/bf5.jpg'
+  }
 ];
 
 export const PC_CONTAINER = document.querySelector("#pc-container");
@@ -130,25 +131,25 @@ ps4GamesGrid.forEach((product)=> {
 
 export let xboxGamesGrid = [
   {
-    name: "FIFA 21",
+    name: "JUST CAUSE 4",
     price: 59.99,
-    url: '/img/cover/ps4/NEWS/193479.png'
+    url: '/img/cover/xbox/JC4.jpg'
   },
   {
-    name: "FARCRY 5 - GOLD EDITION",
-    price: 39.99,
-    url: '/img/cover/ps4/NEWS/farcry.jpg'
+    name: "SEA OF THIEVES",
+    price: 29.99,
+    url: '/img/cover/xbox/SOT.jpg'
   },
   {
-    name: "GRAND THEFT AUTO V",
-    price: 35.99,
-    url: '/img/cover/ps4/NEWS/gta.jpeg'
+    name: "FARCRY 5 - DELUXE EDITION",
+    price: 55.99,
+    url: '/img/cover/xbox/FARCRY5DELUXE.jpg'
   },
   {
 
-    name: "CALL OF DUTY: MODERN WARFARE",
-    price: 49.99,
-    url: '/img/cover/ps4/NEWS/mw.jpg'
+    name: "FIFA 21 - CHAMPIONS EDITION",
+    price: 79.99,
+    url: '/img/cover/xbox/fifa21.png_large'
   }
 ];
 
