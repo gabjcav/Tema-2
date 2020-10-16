@@ -30,6 +30,11 @@ footer{
     color: white;
 }
 
+#our-products-container li:hover{
+    
+    transform: scale(1.1);
+}
+
 .toptext-footer{
     font-size: 1.4rem;
     font-weight: 300 ;

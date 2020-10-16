@@ -1,4 +1,4 @@
-export let consoleList = ["PC", "PLAYSTATION", "XBOX", "COMING SOON"];
+export let consoleList = ["PC", "PLAYSTATION", "XBOX", "COMING SOON", ];
 
 export const NAV_CONTAINER = document.querySelector(".nav-container");
 export const OUR_PRODUCTS_CONTAINER = document.querySelector("#our-products-container");

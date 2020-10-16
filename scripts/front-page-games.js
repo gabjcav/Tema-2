@@ -1,27 +1,27 @@
 //popular games
 
 export let popularGamesGrid = [
-    {
-      name: "FIFA 21",
-      price: "59,99 USD",
-      url: '/img/cover/ps4/NEWS/193479.png'
-    },
-    {
-      name: "FARCRY 5 - GOLD EDITION",
-      price: "39,99 USD",
-      url: '/img/cover/ps4/NEWS/farcry.jpg'
-    },
-    {
-      name: "GRAND THEFT AUTO V",
-      price: "35,99 USD",
-      url: '/img/cover/ps4/NEWS/gta.jpeg'
-    },
-    {
+  {
+    name: "FIFA 21",
+    price: 59.99,
+    url: '/img/cover/ps4/NEWS/193479.png'
+  },
+  {
+    name: "FARCRY 5 - GOLD EDITION",
+    price: 39.99,
+    url: '/img/cover/ps4/NEWS/farcry.jpg'
+  },
+  {
+    name: "GRAND THEFT AUTO V",
+    price: 35.99,
+    url: '/img/cover/ps4/NEWS/gta.jpeg'
+  },
+  {
 
-        name: "CALL OF DUTY: MODERN WARFARE",
-        price: "49,99 USD",
-        url: '/img/cover/ps4/NEWS/mw.jpg'
-      }
+    name: "CALL OF DUTY: MODERN WARFARE",
+    price: 49.99,
+    url: '/img/cover/ps4/NEWS/mw.jpg'
+  },
   ];
 
 export const POPULAR_CONTAINER = document.querySelector("#popular-container");
@@ -45,23 +45,23 @@ popularGamesGrid.forEach((product)=> {
 export let pcGamesGrid = [
   {
     name: "SQUAD",
-    price: "39,99 USD",
+    price: 39.99,
     url: '/img/cover/pc/squad.jpg'
   },
   {
     name: "GRAND THEFT AUTO V",
-    price: "35,99 USD",
+    price: 35.99,
     url: '/img/cover/pc/gta.jpg'
   },
   {
     name: "CALL OF DUTY: COLD WAR",
-    price: "69,99 USD",
+    price: 69.99,
     url: '/img/cover/pc/codcw.jpeg'
   },
   {
 
       name: "BATTLEFIELD V",
-      price: "45,99 USD",
+      price: 45.99,
       url: '/img/cover/pc/bf5.jpg'
     }
 ];
@@ -87,25 +87,26 @@ pcGamesGrid.forEach((product)=> {
 export let ps4GamesGrid = [
   {
     name: "FIFA 21",
-    price: "59,99 USD",
+    price: 59.99,
     url: '/img/cover/ps4/NEWS/193479.png'
   },
   {
     name: "FARCRY 5 - GOLD EDITION",
-    price: "39,99 USD",
+    price: 39.99,
     url: '/img/cover/ps4/NEWS/farcry.jpg'
   },
   {
     name: "GRAND THEFT AUTO V",
-    price: "35,99 USD",
+    price: 35.99,
     url: '/img/cover/ps4/NEWS/gta.jpeg'
   },
   {
 
     name: "CALL OF DUTY: MODERN WARFARE",
-    price: "49,99 USD",
+    price: 49.99,
     url: '/img/cover/ps4/NEWS/mw.jpg'
-  }
+  },
+  
 ];
 
 export const PS4_CONTAINER = document.querySelector("#ps4-container");
@@ -130,23 +131,23 @@ ps4GamesGrid.forEach((product)=> {
 export let xboxGamesGrid = [
   {
     name: "FIFA 21",
-    price: "59,99 USD",
+    price: 59.99,
     url: '/img/cover/ps4/NEWS/193479.png'
   },
   {
     name: "FARCRY 5 - GOLD EDITION",
-    price: "39,99 USD",
+    price: 39.99,
     url: '/img/cover/ps4/NEWS/farcry.jpg'
   },
   {
     name: "GRAND THEFT AUTO V",
-    price: "35,99 USD",
+    price: 35.99,
     url: '/img/cover/ps4/NEWS/gta.jpeg'
   },
   {
 
     name: "CALL OF DUTY: MODERN WARFARE",
-    price: "49,99 USD",
+    price: 49.99,
     url: '/img/cover/ps4/NEWS/mw.jpg'
   }
 ];

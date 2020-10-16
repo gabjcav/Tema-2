@@ -1,7 +1,7 @@
 .products-wrapper{
     display: grid;    
     grid-template-rows: repeat(2,1fr);
-    height: 500px;
+    height: 600px;
     margin-bottom: 170px;
 }
 
@@ -17,7 +17,7 @@
     justify-content: space-around;
     align-items: center;  
     gap: 50px;
-    background-color:#ffffff;
+    background-color:rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
     border: 10px solid #58bce0;
