@@ -189,7 +189,7 @@ xboxGamesGrid.forEach((product)=> {
 
 //SHOPPING CART 
 
-let cart = [];
+export let cart = [];
 
 
 //POPOUT 
@@ -225,20 +225,39 @@ console.log(closeCart);
 
 
 export let addToCartBtn = document.querySelector(".add-to-cart-btn");
-export const CART_LIST_CONTAINER = document.querySelector("#cart-list-container");
+export const CART_LIST_CONTAINER = document.querySelector(".cart-list-container");
 
 
 
 
-export function addItem(evt){
+export function addItem(evt) {
   let foundPopular = popularGamesGrid.find(product => product.id === evt.target.id);
   cart.push(foundPopular);
-  
-  
-
+  console.log(addItem, cart);
 };
+
 
 if(POPULAR_CONTAINER){
   POPULAR_CONTAINER.addEventListener("click", addItem);
+}
+
+
+if(cart){
+  let cartHtml = ""
+  cart.forEach((productItem) =>{
+    cartHtml +=
+
+    cartHtml.innerHTML += `
+    <li class="cart-list-item">
+        <h4 class="cart-product-name">${productItem.name}</h4>
+        <p class="cart-product-price">${productItem.price}</p>
+        <button class="cart-remove-btn">Remove</button>
+    </li>
+    `;
+
+  });
+
+  CART_LIST_CONTAINER.innerHTML += cartHtml;
+
 }
 
