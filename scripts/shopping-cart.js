@@ -28,47 +28,21 @@ console.log(closeCart);
 
 
 //ADD ITEMS
-export const ADD_TO_CART_BTN = document.querySelector(".add-to-cart-btn");
-export const CART_LIST_CONTAINER = document.querySelector(".cart-list-container");
 
-export let popularGamesGrid = [
-    {
-      name: "FIFA 21",
-      price: 59.99,
-      url: '/img/cover/ps4/NEWS/193479.png'
-    },
-    {
-      name: "FARCRY 5 - GOLD EDITION",
-      price: 39.99,
-      url: '/img/cover/ps4/NEWS/farcry.jpg'
-    },
-    {
-      name: "GRAND THEFT AUTO V",
-      price: 35.99,
-      url: '/img/cover/ps4/NEWS/gta.jpeg'
-    },
-    {
-  
-      name: "CALL OF DUTY: MODERN WARFARE",
-      price: 49.99,
-      url: '/img/cover/ps4/NEWS/mw.jpg'
-    },
-    ];
+import {POPULAR_CONTAINER} from "./front-page-games.js";
+
+export let addToCartBtn = document.querySelector(".add-to-cart-btn");
+export const CART_LIST_CONTAINER = document.querySelector("#cart-list-container");
+
+
 
 
     export function addItem(evt){
         evt.preventDefault();
-        popularGamesGrid.forEach((product) => {
-            CART_LIST_CONTAINER.innerHTML += `
-            <li class="cart-list-item" id="cart-info">
-            <h4 class="cart-product-name">${product.name}</h4>
-            <p class="cart-product-price">${product.price}</p>
-            
-            </li>
-            `
-            console.log(product.name);
-        })
+        console.log(evt);
+
     };
 
 
-    ADD_TO_CART_BTN.addEventListener("click", addItem);
+    addToCartBtn.addEventListener("click", addItem);
+
