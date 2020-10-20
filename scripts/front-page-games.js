@@ -126,6 +126,9 @@ export const CART_LIST_CONTAINER = document.querySelector("#cart-list-container"
 
 export function addItem(evt) {
   
+  if(!evt.target.id){
+    return;
+  }
   var foundGame = gamesGrid.find(product => product.id == evt.target.id);
   cart.push(foundGame);
 
@@ -140,7 +143,7 @@ export function addItem(evt) {
       <div class="cart-list-item">
           <h4 class="cart-product-name">${productItem.name}</h4>
           <p class="cart-product-price">${productItem.price}</p>
-          <button class="cart-remove-btn">Remove</button>
+          <button id="${productItem.id}" class="cart-remove-btn">Remove</button>
       </div>
       `; 
      
@@ -170,3 +173,44 @@ if(PS4_CONTAINER){
 if(XBOX_CONTAINER){
   XBOX_CONTAINER.addEventListener("click", addItem);
 }
+
+
+
+
+//REMOVE ITEM
+
+export function removeItem(evt) {
+  console.log("remove", evt);
+  if(!evt.target.id){
+    return;
+  }
+ 
+  cart = cart.filter(c => c.id != evt.target.id)
+
+  if(cart){
+    CART_LIST_CONTAINER.innerHTML = ""
+    var cartContainer = ""
+  
+    cart.forEach((productItem) =>{
+      console.log("prodItem", productItem);
+      cartContainer+= `
+      
+      <div class="cart-list-item">
+          <h4 class="cart-product-name">${productItem.name}</h4>
+          <p class="cart-product-price">${productItem.price}</p>
+          <button id="${productItem.id}" class="cart-remove-btn">Remove</button>
+      </div>
+      `; 
+     
+    });
+    
+    CART_LIST_CONTAINER.innerHTML = cartContainer;
+    
+   
+  }
+
+};
+
+let removeBtn = document.querySelector(".cart-remove-btn")
+
+CART_LIST_CONTAINER.addEventListener("click", removeItem);
