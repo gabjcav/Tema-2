@@ -2,32 +2,32 @@
 
 export let gamesGrid = [
     {
-      name: "FIFA 21",
+      name: "FIFA 21 (PS4)",
       price: 59.99,
       url: '/img/cover/ps4/NEWS/193479.png',
-      catergory: "popular",
+      category: "popular",
       id: 1
     },
     {
-      name: "SQUAD",
+      name: "SQUAD (PC)",
       price: 39.99,
       url: '/img/cover/pc/squad.jpg',
-      catergory: "popular",
+      category: "popular",
       id: 2
     },
     {
-      name: "GRAND THEFT AUTO V",
+      name: "GRAND THEFT AUTO V (PS4)",
       price: 35.99,
       url: '/img/cover/ps4/NEWS/gta.jpeg',
-      catergory: "popular",
+      category: "popular",
       id: 3
     },
     {
   
-      name: "SEA OF THIEVES",
+      name: "SEA OF THIEVES (XBOX)",
       price: 29.99,
       url: '/img/cover/xbox/SOT.jpg',
-      catergory: "popular",
+      category: "popular",
       id: 4
     },
    
