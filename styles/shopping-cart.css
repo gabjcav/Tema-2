@@ -64,6 +64,8 @@
     padding: 10px;
     border-radius: 5px;
     color: white;
+  
+    
 }
 .cart-remove-btn{
     padding: 5px;
@@ -76,23 +78,31 @@
     width: 70px;
 }
 
-#total-price{
-    margin-top: 50px;
-}
+
 
 #cart-info{
     margin-bottom: 50px;
 }
 
-#checkout{
+#clearBtn{
     height: 60px;
     width: 90px;
     padding: 5px;
-    background-color:  #58e06a;
+    background-color: #e05858;
     border-radius: 5px;
     border: none;
     margin-top: 5px;
     color: white;
     font-size: 1.2rem; 
     width: 70px;
+}
+
+.cart-product-price{
+    margin-left: 2rem;
+}
+
+
+#total{
+    margin-top: 2rem;
+    letter-spacing: .1rem;
 }

@@ -12,7 +12,7 @@ gamesGrid.filter(g => g.category == "popular").forEach((product)=> {
     <img src="${product.url}" alt="${product.alt}">
         <div class="game-info">
             <h2 class="product-name">${product.name}</h2>
-            <p>Price: ${product.price}</p>
+            <p>Price: $ ${product.price}</p>
             <button id="${product.id}" class="add-to-cart-btn"> Add to cart</button>
         </div>
     </div>
@@ -31,7 +31,7 @@ gamesGrid.filter(g => g.category == "pc").forEach((product)=> {
   <img src="${product.url}" alt="${product.alt}">
       <div class="game-info">
           <h2 class="product-name">${product.name}</h2>
-          <p>Price: ${product.price}</p>
+          <p>Price: $ ${product.price}</p>
           <button id="${product.id}" class="add-to-cart-btn"> Add to cart</button>
       </div>
   </div>
@@ -52,7 +52,7 @@ gamesGrid.filter(g => g.category == "ps4").forEach((product)=> {
   <img src="${product.url}" alt="${product.alt}">
       <div class="game-info">
           <h2 class="product-name">${product.name}</h2>
-          <p>Price: ${product.price}</p>
+          <p>Price: $ ${product.price}</p>
           <button id="${product.id}" class="add-to-cart-btn"> Add to cart</button>
       </div>
   </div>
@@ -72,7 +72,7 @@ gamesGrid.filter(g => g.category == "xbox").forEach((product)=> {
   <img src="${product.url}" alt="${product.alt}">
       <div class="game-info">
           <h2 class="product-name">${product.name}</h2>
-          <p>Price: ${product.price}</p>
+          <p>Price: $ ${product.price}</p>
           <button id="${product.id}" class="add-to-cart-btn"> Add to cart</button>
       </div>
   </div>
@@ -80,12 +80,11 @@ gamesGrid.filter(g => g.category == "xbox").forEach((product)=> {
 });
 
 
-//SHOPPING CART _____________________________________________________________________
-
+//SHOPPING CART____________________________________________________
 export let cart = [];
 
 
-//POPOUT 
+//POPOUT --------------------------------------------
 
 
 export const CLOSE_BTN = document.querySelector("#close-shopping-cart");
@@ -114,26 +113,31 @@ CLOSE_BTN.addEventListener("click", closeCart);
 console.log(closeCart);
 
 
-//ADD ITEMS
+//ADD ITEMS-----------------------------------
 
 
 
 export let addToCartBtn = document.querySelector(".add-to-cart-btn");
 export const CART_LIST_CONTAINER = document.querySelector("#cart-list-container");
+let totalPriceContainer = document.querySelector("#total-price");
 
-
-
-
+export let totalPrice = [];
+let sum = 0;
 export function addItem(evt) {
   
-  if(!evt.target.id){
+  if(!gamesGrid.find(product => product.id == evt.target.id)){
     return;
   }
+
   var foundGame = gamesGrid.find(product => product.id == evt.target.id);
   cart.push(foundGame);
 
+  
+
+
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
+    sum = 0
     var cartContainer = ""
   
     cart.forEach((productItem) =>{
@@ -142,19 +146,26 @@ export function addItem(evt) {
       
       <div class="cart-list-item">
           <h4 class="cart-product-name">${productItem.name}</h4>
-          <p class="cart-product-price">${productItem.price}</p>
+          <p class="cart-product-price"> $ ${productItem.price}</p>
           <button id="${productItem.id}" class="cart-remove-btn">Remove</button>
       </div>
       `; 
+
+      
+      sum += productItem.price
+
+      totalPriceContainer.innerHTML = `
+      $ ${sum}
+    
+    `
      
     });
     
     CART_LIST_CONTAINER.innerHTML = cartContainer;
-    
-    console.log(cart);
+    console.log(sum);
   }
-
-}
+  
+};
 
 
 
@@ -177,7 +188,7 @@ if(XBOX_CONTAINER){
 
 
 
-//REMOVE ITEM
+//REMOVE ITEM------------------------------------
 
 export function removeItem(evt) {
   console.log("remove", evt);
@@ -189,6 +200,7 @@ export function removeItem(evt) {
 
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
+    sum = 0
     var cartContainer = ""
   
     cart.forEach((productItem) =>{
@@ -197,20 +209,104 @@ export function removeItem(evt) {
       
       <div class="cart-list-item">
           <h4 class="cart-product-name">${productItem.name}</h4>
-          <p class="cart-product-price">${productItem.price}</p>
+          <p class="cart-product-price"> $ ${productItem.price}</p>
           <button id="${productItem.id}" class="cart-remove-btn">Remove</button>
       </div>
       `; 
+
+    
+      sum += productItem.price
+
+      totalPriceContainer.innerHTML = `
+      $ ${sum}
+    
+    `
+      
      
     });
+
+    if(cart.length === 0){
+      totalPriceContainer.innerHTML = "$" + 0
+    };
     
     CART_LIST_CONTAINER.innerHTML = cartContainer;
     
    
   }
 
+  
 };
 
 let removeBtn = document.querySelector(".cart-remove-btn")
 
 CART_LIST_CONTAINER.addEventListener("click", removeItem);
+
+
+//TOTAL PRICE
+
+
+/* let totalPriceContainer = document.querySelector("#total-price");
+  
+export function getTotal() {
+
+  
+let totalPrice = [];
+
+
+var calcPrice = gamesGrid.filter(productItem => productItem.price > 0);
+totalPrice.push(calcPrice);
+
+
+
+if(totalPrice){
+  CART_LIST_CONTAINER.innerHTML = ""
+  let totalPrice = ""
+
+  totalPrice.forEach((productItem) =>{
+      
+    totalPriceContainer+= `
+    
+    <div class="cart-list-item">
+        <h4 class="cart-product-name">${productItem.name}</h4>
+        <p class="cart-product-price"> $ ${productItem.price}</p>
+        <button id="${productItem.id}" class="cart-remove-btn">Remove</button>
+    </div>
+    `; 
+    
+  });
+  
+  CART_LIST_CONTAINER.innerHTML = totalPriceContainer;
+  
+  
+
+  
+}
+
+}
+console.log("Hei", totalPrice); */
+
+//CLEAR
+
+export function clearAll(evt) {
+  
+  if(!evt.target.id){
+    return;
+  }
+ 
+  cart = []
+
+  sum = 0
+
+  if(cart){
+    CART_LIST_CONTAINER.innerHTML = ""
+
+    
+    totalPriceContainer.innerHTML = `
+      $ ${sum}
+    `
+  }
+};
+
+let clearBtn = document.querySelector("#clearBtn");
+
+clearBtn.addEventListener("click", clearAll);
