@@ -18,7 +18,7 @@ gamesGrid.filter(g => g.category == "popular").forEach((product)=> {
     </div>
     `
 });
-console.log(gamesGrid.filter(g => g.category == "popular"));
+
 //PC
 
 
@@ -113,7 +113,7 @@ CLOSE_BTN.addEventListener("click", closeCart);
 console.log(closeCart);
 
 
-//ADD ITEMS-----------------------------------
+//ADD TO / REMOVE FROM CART----------------------------------------
 
 
 
@@ -123,6 +123,9 @@ let totalPriceContainer = document.querySelector("#total-price");
 
 export let totalPrice = [];
 let sum = 0;
+
+// ADD TO CART FUNCTION ------------------------------------------------
+
 export function addItem(evt) {
   
   if(!gamesGrid.find(product => product.id == evt.target.id)){
@@ -151,22 +154,16 @@ export function addItem(evt) {
       </div>
       `; 
 
-      
+      productItem.qty ++
       sum += productItem.price
 
       totalPriceContainer.innerHTML = `
       $ ${sum}
-    
     `
-    
-    });
-    
-    CART_LIST_CONTAINER.innerHTML = cartContainer;
-    
-  }
 
-  
-  
+    });
+    CART_LIST_CONTAINER.innerHTML = cartContainer;
+  }
 };
 
 
@@ -191,7 +188,7 @@ if(XBOX_CONTAINER){
 
 
 
-//REMOVE ITEM------------------------------------
+//REMOVE ITEM FUNCTION --------------------------------------------------
 
 export function removeItem(evt) {
   console.log("remove", evt);
@@ -219,7 +216,8 @@ export function removeItem(evt) {
       </div>
       `; 
 
-    
+      
+
       sum += productItem.price
 
       totalPriceContainer.innerHTML = `
@@ -250,7 +248,7 @@ CART_LIST_CONTAINER.addEventListener("click", removeItem);
 
 
 
-//CLEAR
+//CLEAR ALL FUNCTION ---------------------------------------------------------
 
 export function clearAll(evt) {
   
@@ -277,7 +275,7 @@ let clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener("click", clearAll);
 
 
-// ITEM COUNTER
+// ITEM COUNTER (added in the 3 functions above)
 
 
 
@@ -287,4 +285,6 @@ itemCounter.innerHTML = cart.length;
 
 
 
-console.log(itemCounter);
+console.log(cart);
+
+
