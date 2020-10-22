@@ -91,3 +91,14 @@ header{
 #deals{
     color: rgb(255, 255, 255);
 }
+
+#item-counter-container{
+   background-color: #58bce0; 
+   width: 20px;
+   height: 20px;
+   color: white;
+   text-align: center;
+   padding: .1rem;
+   border-radius: .2rem;
+   
+}

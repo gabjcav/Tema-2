@@ -139,7 +139,7 @@ export function addItem(evt) {
     CART_LIST_CONTAINER.innerHTML = ""
     sum = 0
     var cartContainer = ""
-  
+    itemCounter.innerHTML = ` ${cart.length} `;
     cart.forEach((productItem) =>{
        
       cartContainer+= `
@@ -158,14 +158,17 @@ export function addItem(evt) {
       $ ${sum}
     
     `
-     
+    
     });
     
     CART_LIST_CONTAINER.innerHTML = cartContainer;
-    console.log(sum);
+    
   }
+
+  
   
 };
+
 
 
 
@@ -192,6 +195,7 @@ if(XBOX_CONTAINER){
 
 export function removeItem(evt) {
   console.log("remove", evt);
+  
   if(!evt.target.id){
     return;
   }
@@ -200,9 +204,10 @@ export function removeItem(evt) {
 
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
+    
     sum = 0
     var cartContainer = ""
-  
+    itemCounter.innerHTML = ` ${cart.length} `;
     cart.forEach((productItem) =>{
       console.log("prodItem", productItem);
       cartContainer+= `
@@ -221,7 +226,7 @@ export function removeItem(evt) {
       $ ${sum}
     
     `
-      
+
      
     });
 
@@ -235,6 +240,7 @@ export function removeItem(evt) {
   }
 
   
+  
 };
 
 let removeBtn = document.querySelector(".cart-remove-btn")
@@ -242,48 +248,7 @@ let removeBtn = document.querySelector(".cart-remove-btn")
 CART_LIST_CONTAINER.addEventListener("click", removeItem);
 
 
-//TOTAL PRICE
 
-
-/* let totalPriceContainer = document.querySelector("#total-price");
-  
-export function getTotal() {
-
-  
-let totalPrice = [];
-
-
-var calcPrice = gamesGrid.filter(productItem => productItem.price > 0);
-totalPrice.push(calcPrice);
-
-
-
-if(totalPrice){
-  CART_LIST_CONTAINER.innerHTML = ""
-  let totalPrice = ""
-
-  totalPrice.forEach((productItem) =>{
-      
-    totalPriceContainer+= `
-    
-    <div class="cart-list-item">
-        <h4 class="cart-product-name">${productItem.name}</h4>
-        <p class="cart-product-price"> $ ${productItem.price}</p>
-        <button id="${productItem.id}" class="cart-remove-btn">Remove</button>
-    </div>
-    `; 
-    
-  });
-  
-  CART_LIST_CONTAINER.innerHTML = totalPriceContainer;
-  
-  
-
-  
-}
-
-}
-console.log("Hei", totalPrice); */
 
 //CLEAR
 
@@ -299,7 +264,7 @@ export function clearAll(evt) {
 
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
-
+    itemCounter.innerHTML = ` ${cart.length} `;
     
     totalPriceContainer.innerHTML = `
       $ ${sum}
@@ -310,3 +275,16 @@ export function clearAll(evt) {
 let clearBtn = document.querySelector("#clearBtn");
 
 clearBtn.addEventListener("click", clearAll);
+
+
+// ITEM COUNTER
+
+
+
+export let itemCounter = document.querySelector("#item-counter");
+
+itemCounter.innerHTML = cart.length;
+
+
+
+console.log(itemCounter);
