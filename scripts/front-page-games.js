@@ -25,7 +25,7 @@ gamesGrid.filter(g => g.category == "popular").forEach((product)=> {
 
 export const PC_CONTAINER = document.querySelector("#pc-container");
 
-gamesGrid.filter(g => g.category == "pc").forEach((product)=> {
+gamesGrid.filter(g => g.category == "pc").forEach((product) => {
   PC_CONTAINER.innerHTML += `
   <div class="products-games">
   <img src="${product.url}" alt="${product.alt}">
@@ -46,7 +46,7 @@ gamesGrid.filter(g => g.category == "pc").forEach((product)=> {
 export const PS4_CONTAINER = document.querySelector("#ps4-container");
 
 
-gamesGrid.filter(g => g.category == "ps4").forEach((product)=> {
+gamesGrid.filter(g => g.category == "ps4").forEach((product) => {
   PS4_CONTAINER.innerHTML += `
   <div class="products-games">
   <img src="${product.url}" alt="${product.alt}">
@@ -66,7 +66,7 @@ gamesGrid.filter(g => g.category == "ps4").forEach((product)=> {
 export const XBOX_CONTAINER = document.querySelector("#xbox-container");
 
 
-gamesGrid.filter(g => g.category == "xbox").forEach((product)=> {
+gamesGrid.filter(g => g.category == "xbox").forEach((product) => {
   XBOX_CONTAINER.innerHTML += `
   <div class="products-games">
   <img src="${product.url}" alt="${product.alt}">
@@ -133,16 +133,25 @@ export function addItem(evt) {
   }
 
   var foundGame = gamesGrid.find(product => product.id == evt.target.id);
-  cart.push(foundGame);
+  
+  if(foundGame.qty === 0){
+    foundGame.qty++
+    cart.push(foundGame)
+  } else {
+    window.alert("Product is already in cart");
+  }
 
   
-
-
   if(cart){
+
     CART_LIST_CONTAINER.innerHTML = ""
+
     sum = 0
+  
     var cartContainer = ""
+
     itemCounter.innerHTML = ` ${cart.length} `;
+
     cart.forEach((productItem) =>{
        
       cartContainer+= `
@@ -154,13 +163,11 @@ export function addItem(evt) {
       </div>
       `; 
 
-      productItem.qty ++
       sum += productItem.price
 
       totalPriceContainer.innerHTML = `
       $ ${sum}
     `
-
     });
     CART_LIST_CONTAINER.innerHTML = cartContainer;
   }
@@ -196,8 +203,14 @@ export function removeItem(evt) {
   if(!evt.target.id){
     return;
   }
- 
+  
   cart = cart.filter(c => c.id != evt.target.id)
+
+  if(cart.qty === 1){
+    cart.splice();
+  } else {
+    console.log("hello");
+  }
 
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
@@ -268,6 +281,10 @@ export function clearAll(evt) {
     totalPriceContainer.innerHTML = `
       $ ${sum}
     `
+    
+    addToCartBtn.style.backgroundColor = "#58bce0";
+    addToCartBtn.innerHTML = "Add to cart";
+    
   }
 };
 
@@ -289,3 +306,4 @@ itemCounter.innerHTML = cart.length;
 
 //QTY 
 
+console.log(cart);

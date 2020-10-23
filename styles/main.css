@@ -18,6 +18,7 @@ body{
     z-index: -1;
     width: 100vw;
     background-color: white;
+    overflow-x: hidden;
 }
 
 main{
