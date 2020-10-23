@@ -3,6 +3,7 @@
 import {gamesGrid} from "./products.js";
 
 
+
 export const POPULAR_CONTAINER = document.querySelector("#popular-container");
   
 
@@ -110,7 +111,7 @@ SHOPPING_LINK.addEventListener("click", openShoppingCart);
 
 CLOSE_BTN.addEventListener("click", closeCart);
 
-console.log(closeCart);
+
 
 
 //ADD TO / REMOVE FROM CART----------------------------------------
@@ -153,7 +154,7 @@ export function addItem(evt) {
     itemCounter.innerHTML = ` ${cart.length} `;
 
     cart.forEach((productItem) =>{
-       
+      
       cartContainer+= `
       
       <div class="cart-list-item">
@@ -206,11 +207,6 @@ export function removeItem(evt) {
   
   cart = cart.filter(c => c.id != evt.target.id)
 
-  if(cart.qty === 1){
-    cart.splice();
-  } else {
-    console.log("hello");
-  }
 
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
@@ -219,7 +215,7 @@ export function removeItem(evt) {
     var cartContainer = ""
     itemCounter.innerHTML = ` ${cart.length} `;
     cart.forEach((productItem) =>{
-      console.log("prodItem", productItem);
+      
       cartContainer+= `
       
       <div class="cart-list-item">
@@ -229,16 +225,14 @@ export function removeItem(evt) {
       </div>
       `; 
 
-      
-
       sum += productItem.price
+
+      
 
       totalPriceContainer.innerHTML = `
       $  ${sum}
     
     `
-
-     
     });
 
     if(cart.length === 0){
@@ -247,7 +241,7 @@ export function removeItem(evt) {
     
     CART_LIST_CONTAINER.innerHTML = cartContainer;
     
-   
+    return cart;
   }
 
   
@@ -282,9 +276,7 @@ export function clearAll(evt) {
       $ ${sum}
     `
     
-    addToCartBtn.style.backgroundColor = "#58bce0";
-    addToCartBtn.innerHTML = "Add to cart";
-    
+   
   }
 };
 
@@ -301,9 +293,5 @@ export let itemCounter = document.querySelector("#item-counter");
 
 itemCounter.innerHTML = cart.length;
 
-
-
-
-//QTY 
 
 console.log(cart);
