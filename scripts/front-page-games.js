@@ -132,8 +132,8 @@ export function addItem(evt) {
   if(!gamesGrid.find(product => product.id == evt.target.id)){
     return;
   }
-
-  var foundGame = gamesGrid.find(product => product.id == evt.target.id);
+                  //object.assign lager et nytt objekt istedenfor referanse til samme objekt
+  var foundGame = Object.assign({},gamesGrid.find(product => product.id == evt.target.id));
   
   if(foundGame.qty === 0){
     foundGame.qty++
@@ -205,15 +205,22 @@ export function removeItem(evt) {
     return;
   }
   
-  cart = cart.filter(c => c.id != evt.target.id)
+  let cartIndex = cart.findIndex(c => c.id == evt.target.id)
+
+  cart.splice(cartIndex, 1)
+
+  console.log(cartIndex)
 
 
-  if(cart){
+    
     CART_LIST_CONTAINER.innerHTML = ""
     
     sum = 0
     var cartContainer = ""
     itemCounter.innerHTML = ` ${cart.length} `;
+
+   
+    
     cart.forEach((productItem) =>{
       
       cartContainer+= `
@@ -227,12 +234,9 @@ export function removeItem(evt) {
 
       sum += productItem.price
 
-      
-
       totalPriceContainer.innerHTML = `
       $  ${sum}
-    
-    `
+      `
     });
 
     if(cart.length === 0){
@@ -241,12 +245,12 @@ export function removeItem(evt) {
     
     CART_LIST_CONTAINER.innerHTML = cartContainer;
     
-    return cart;
-  }
-
+    console.log("hei", cart);
   
   
 };
+
+
 
 let removeBtn = document.querySelector(".cart-remove-btn")
 
@@ -293,5 +297,3 @@ export let itemCounter = document.querySelector("#item-counter");
 
 itemCounter.innerHTML = cart.length;
 
-
-console.log(cart);
