@@ -46,6 +46,7 @@
 
 .add-to-cart-btn:hover{
     background-color:  #347086;
+    cursor: pointer;
 }
 
 

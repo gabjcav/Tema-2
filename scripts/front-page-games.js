@@ -88,7 +88,7 @@ export let cart = [];
 
 
 export const CLOSE_BTN = document.querySelector("#close-shopping-cart");
-export const SHOPPING_CART_ICON = document.querySelector("#shopping-cart-icon");
+export const SHOPPING_LINK = document.querySelector("#shopping-link");
 export const SHOPPING_CART_CONTAINER = document.querySelector(".shopping-cart-container");
 
 
@@ -104,7 +104,7 @@ export function closeCart (evt){
     
 }
 
-SHOPPING_CART_ICON.addEventListener("click", openShoppingCart);
+SHOPPING_LINK.addEventListener("click", openShoppingCart);
 
 
 
@@ -191,7 +191,7 @@ if(XBOX_CONTAINER){
 //REMOVE ITEM FUNCTION --------------------------------------------------
 
 export function removeItem(evt) {
-  console.log("remove", evt);
+  
   
   if(!evt.target.id){
     return;
@@ -221,7 +221,7 @@ export function removeItem(evt) {
       sum += productItem.price
 
       totalPriceContainer.innerHTML = `
-      $ ${sum}
+      $  ${sum}
     
     `
 
@@ -229,8 +229,8 @@ export function removeItem(evt) {
     });
 
     if(cart.length === 0){
-      totalPriceContainer.innerHTML = "$" + 0
-    };
+      totalPriceContainer.innerHTML = `$ 0`;
+    }
     
     CART_LIST_CONTAINER.innerHTML = cartContainer;
     
@@ -259,9 +259,10 @@ export function clearAll(evt) {
   cart = []
 
   sum = 0
-
+  
   if(cart){
     CART_LIST_CONTAINER.innerHTML = ""
+
     itemCounter.innerHTML = ` ${cart.length} `;
     
     totalPriceContainer.innerHTML = `
@@ -285,6 +286,6 @@ itemCounter.innerHTML = cart.length;
 
 
 
-console.log(cart);
 
+//QTY 
 
