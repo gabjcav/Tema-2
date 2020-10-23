@@ -7,7 +7,7 @@ export let gamesGrid = [
     {
       name: "FIFA 21 (PS4)",
       price: 59,
-      url: '/img/cover/ps4/NEWS/193479.png',
+      url: './img/cover/ps4/NEWS/193479.png',
       category: "popular",
       id: 1,
       qty: 0,
@@ -16,7 +16,7 @@ export let gamesGrid = [
     {
       name: "SQUAD (PC)",
       price: 39,
-      url: '/img/cover/pc/squad.jpg',
+      url: './img/cover/pc/squad.jpg',
       category: "popular",
       id: 2,
       qty: 0,
