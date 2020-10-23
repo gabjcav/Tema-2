@@ -133,16 +133,16 @@ export function addItem(evt) {
     return;
   }
                   //object.assign lager et nytt objekt istedenfor referanse til samme objekt
-  var foundGame = Object.assign({},gamesGrid.find(product => product.id == evt.target.id));
+  let foundGame = Object.assign({},gamesGrid.find(product => product.id == evt.target.id));
   
-  if(foundGame.qty === 0){
+  if(foundGame.qty == 0){
     foundGame.qty++
     cart.push(foundGame)
   } else {
     window.alert("Product is already in cart");
   }
 
-  
+ 
   if(cart){
 
     CART_LIST_CONTAINER.innerHTML = ""
@@ -172,6 +172,7 @@ export function addItem(evt) {
     });
     CART_LIST_CONTAINER.innerHTML = cartContainer;
   }
+  console.log("add", cart);
 };
 
 

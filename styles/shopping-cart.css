@@ -1,7 +1,7 @@
 .shopping-cart-container{
     background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
-    height: 239%;
+    height:292%;
     position: absolute;
     top: 0;
     justify-content: center;
@@ -15,7 +15,7 @@
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-    margin-left: 69rem;
+    margin-left: 49rem;
     margin-top: 20rem;
     position: fixed;
 }
